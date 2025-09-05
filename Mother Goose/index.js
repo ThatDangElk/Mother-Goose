@@ -1,5 +1,5 @@
 // ==============================
-// Event-Driven Lore Controller
+// Mother Goose - Event-Driven Lore Controller
 // index.js starter scaffold
 // ==============================
 
@@ -16,9 +16,9 @@ function loadEvents() {
     .then(res => res.json())
     .then(data => {
       events = data;
-      console.log('[Event Controller] Loaded', events.length, 'events');
+      console.log('[Mother Goose] Loaded', events.length, 'events');
     })
-    .catch(err => console.error('[Event Controller] Failed to load events:', err));
+    .catch(err => console.error('[Mother Goose] Failed to load events:', err));
 }
 
 // ------------------------------
@@ -42,7 +42,7 @@ function processEvents() {
       // Collect text for display
       if (event.text) triggeredTexts.push(event.text);
 
-      console.log(`[Event Controller] Event fired: ${event.id}`);
+      console.log(`[Mother Goose] Event fired: ${event.id}`);
     }
   });
 
@@ -65,7 +65,7 @@ function filterLore(loreEntries) {
 function advanceNode(node) {
   if (!node) return;
   currentNode = node.id;
-  console.log(`[Event Controller] Advancing to node: ${currentNode}`);
+  console.log(`[Mother Goose] Advancing to node: ${currentNode}`);
 
   if (node.unlock_flags) {
     node.unlock_flags.forEach(f => flags[f] = true);
@@ -84,7 +84,7 @@ function parseInlineFlags(text) {
   let match;
   while ((match = regex.exec(text)) !== null) {
     flags[match[1]] = true;
-    console.log(`[Event Controller] Inline flag set: ${match[1]}`);
+    console.log(`[Mother Goose] Inline flag set: ${match[1]}`);
   }
 }
 
@@ -92,7 +92,7 @@ function parseInlineFlags(text) {
 // UI Placeholder (Lorebook-style)
 // ------------------------------
 function setupUI() {
-  console.log('[Event Controller] UI setup placeholder');
+  console.log('[Mother Goose] UI setup placeholder');
   // Here you can replicate Lorebook table:
   // Columns: Title | Description | Trigger Flags | Set Flags | Repeatable | Status
 }
@@ -101,7 +101,7 @@ function setupUI() {
 // Initialization
 // ------------------------------
 function init() {
-  console.log('[Event Controller] Initializing...');
+  console.log('[Mother Goose] Initializing...');
   loadEvents();
   setupUI();
 
@@ -109,4 +109,22 @@ function init() {
   // Example: hook filterLore into lorebook injection pipeline
 }
 
-init();
+// ==============================
+// SillyTavern Extension Export
+// ==============================
+export function setup() {
+  init();
+  // You can also add further SillyTavern-specific hooks here
+  console.log('[Mother Goose] Extension setup complete');
+}
+
+// Optionally, export helpers if you want to use them elsewhere
+export {
+  flags,
+  events,
+  currentNode,
+  processEvents,
+  filterLore,
+  advanceNode,
+  parseInlineFlags
+};
