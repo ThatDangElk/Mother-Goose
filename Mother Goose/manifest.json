@@ -1,6 +1,12 @@
 {
-  "name": "Mother Goose",
-  "description": "Be part of a story",
-  "version": "0.1",
-  "entry": "index.js"
+    "display_name": "MotherGoose",
+    "loading_order": 1000,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "ThatDangElk",
+    "version": "1.0.0",
+    "homePage": "",
+    "auto_update": false
 }
