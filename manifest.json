@@ -1,0 +1,15 @@
+{
+    "display_name": "Mother Goose",
+    "loading_order": 100,
+    "requires": [],
+    "optional": [],
+    "js": "Mother Goose/index.js",
+    "css": "Mother Goose/style.css",
+    "author": "ThatDangElk",
+    "version": "1.0.0",
+    "homePage": "",
+    "auto_update": false
+}
+
+
+
