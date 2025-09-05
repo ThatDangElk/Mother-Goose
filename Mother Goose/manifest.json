@@ -1,0 +1,6 @@
+{
+  "name": "Mother Goose",
+  "description": "Be part of a story",
+  "version": "0.1",
+  "entry": "index.js"
+}
