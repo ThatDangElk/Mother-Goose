@@ -1,5 +1,5 @@
 {
-    "display_name": "MotherGoose",
+    "display_name": "Mother Goose",
     "loading_order": 100,
     "requires": [],
     "optional": [],
@@ -10,4 +10,5 @@
     "homePage": "",
     "auto_update": false
 }
+
 
