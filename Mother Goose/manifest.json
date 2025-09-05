@@ -3,12 +3,13 @@
     "loading_order": 100,
     "requires": [],
     "optional": [],
-    "js": "index.js",
-    "css": "style.css",
+    "js": "Mother Goose/index.js",
+    "css": "Mother Goose/style.css",
     "author": "ThatDangElk",
     "version": "1.0.0",
     "homePage": "",
     "auto_update": false
 }
+
 
 
